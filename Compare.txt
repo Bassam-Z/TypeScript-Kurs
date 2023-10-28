@@ -1,0 +1,13 @@
+Statically Typed Language Like [Rust, C, C++]
+- Variables Type Are Static, Once You Declare It You Cannot Change
+- Type Of A Variable is Known at Compile Time "Do Type Chacking at Compile-Time"
+    - Have Better Preformance at Run-Tim Due To Not Needing to check Types Dynamiclly
+- Error Detacted Earlier
+
+Dynamically Typed Language Like [PHP, Python, JavaScript]
+- Variables Types Are Dynamic, You Can Always Change It
+- "Type Checking at Execution-Time"
+- Error Can Be Detected After Execution
+
+*******************************************************
+
