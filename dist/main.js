@@ -87,15 +87,239 @@ Type Annotations || Signature
         -What About Float => All is Under Type Number
 
 */
-function addAll(...nums) {
-    let result = 0;
-    // for(let i = 0; i < nums.length; i ++) {
-    //     result+=nums[i];
-    // }
-    nums.forEach((num) => result += num);
-    return result;
-}
-// console.log(addAll(10, 20, 30, 100));
-// console.log(addAll(10, 20, 30, 100.5, true));
-console.log(addAll(10, 20, 30, 100.5, 10, +true));
+// function addAll(...nums: number[]) {
+//     let result = 0;
+//     // for(let i = 0; i < nums.length; i ++) {
+//     //     result+=nums[i];
+//     // }
+//     nums.forEach((num) => result += num);
+//     return result;
+// }
+// // console.log(addAll(10, 20, 30, 100));
+// // console.log(addAll(10, 20, 30, 100.5, true));
+// console.log(addAll(10, 20, 30, 100.5,10, + true));
+// ************************************************************
+/*
+    Function
+        - Anonymous Function
+        - Arrow Function
+*/
+// const add = function(num1: number, num2: number): number {
+//     return num1 + num2;
+// }
+// console.log(add(10, 20));
+// const addWithArrow = (num1:number, num2:number) : number => num1 + num2;
+// console.log(addWithArrow(10, 20));
+// ************************************************************
+/*
+    Data Types
+    - Type Alias
+*/
+// type st = string;
+// let theName: st = "Bassam";
+// theName = "Ali";
+// // theName = 12;
+// type standnum = string | number;
+// let all: standnum = 10;
+// all = 100;
+// all = "Arwa";
+// // all = true;
+// ************************************************************
+/*
+    Data Types
+    - Advanced Type Alias
+*/
+// type Buttons = {
+//     up: String,
+//     right: String,
+//     down: String,
+//     left: String
+// }
+// type last = Buttons & {
+//     x: boolean
+// }
+// // function getActions(btns: Buttons) {
+// //     console.log(`Action For Button Up is ${btns.up}`);
+// //     console.log(`Action For Button Right is ${btns.right}`);
+// //     console.log(`Action For Button Down is ${btns.down}`);
+// //     console.log(`Action For Button Left is ${btns.left}`);
+// // }
+// // getActions({up: "Jump", right: "Go right", down:"Go back", left:"Go left"});
+// function getActions(btns: last) {
+//     console.log(`Action For Button Up is ${btns.up}`);
+//     console.log(`Action For Button Right is ${btns.right}`);
+//     console.log(`Action For Button Down is ${btns.down}`);
+//     console.log(`Action For Button Left is ${btns.left}`);
+//     console.log(`Action For All Buttons  ${btns.x}`);
+// }
+// getActions({up: "Jump", right: "Go right", down:"Go back", left:"Go left", x: true});
+// ************************************************************
+/*
+    Data Types
+    - Litral Types
+*/
+// type nums =  0 | 1 | -1;
+// function compare(num1: number, num2: number) : nums {
+//     if (num1 === num2) {
+//         return 0;
+//     } else if (num1 > num2) {
+//         return 1;
+//     } else {
+//         return -1;
+//     }
+// }
+// console.log(compare(20, 20));
+// console.log(compare(20, 15));
+// console.log(compare(20, 30));
+// // let myNumber: nums = 100;
+// var myNumber: nums = 0;
+// var myNumber: nums = 1;
+// var myNumber: nums = -1;
+// // var myNumber: nums = 2;
+// ************************************************************
+/*
+    Data Types
+    - Tuple
+        - Is Another Dort of Array Type
+        - We knows Exactly How Many Elements it Contains
+        - We knows Ehich Types it Contains at Specific Positions
+*/
+// let article: [number, string, boolean] = [11, "Title One", true];
+// // let article: readonly [number, string, boolean] = [11, "Title One", true];
+// // let article: [number, string, boolean] = [11, "Title One", true, 100];// only 3 element
+// article = [12, "Title Two", false];
+// article.push(100);
+// console.log(article);
+// const [id, title, published] = article;
+// console.log(id);
+// console.log(title);
+// console.log(published);
+// ************************************************************
+/*
+    Data Types
+    - Void
+        - Function That Will Return Nothing
+        - Function on JavaScript That Not Return A Value will show undefined
+        - undefined in not void
+    - Never
+        - Return Type never Returns
+        - The function Doesn't  Have a Normal Copletion
+        - It throws An Error or Never Finishes Running at all "Infinite Loop"
+*/
+// function login(msg: String) : void {
+//     console.log(msg);
+//     return;
+// }
+// console.log(login("Im a Message"));
+// console.log("login");
+// const fail = (msg: string) => {
+//     throw new Error(msg);
+//     // return 10;
+// }
+// function alwaysLog (name: String) : never {
+//     while(true) {
+//         console.log(name);
+//     }
+//     // return;
+// }
+// // alwaysLog("Bassam");
+// // console.log("login");
+// ************************************************************
+/*
+    Data Types
+    - Enums => Enumerations
+        - Allow us to Declare a Set of Named Constantes
+        - Used for Lagical Frouping Collection of Constants "Collection of Related Values"
+        - It Organize Your Code
+        - By Default Enums are Number-Based, First Element is 0
+        - Theres A Numeric Enums
+        - Theres a String-Based Enums
+        - Theres Heterogeneous Enums [String + Number]
+*/
+// const kids = 15;
+// const easy = 9;
+// const medium = 6;
+// const hard = 3;
+// enum Level {
+//     kids = 15,
+//     easy = 9,
+//     medium = 6,
+//     hard = 3
+// }
+// let lvl: string = "Esay";
+// if(lvl === "Esay") {
+//     console.log(`The Level is ${lvl} and Number of Seconds is ${Level.easy}`);
+// }
+// ************************************************************
+/*
+    Data Types
+    - Enums => Enumerations
+        - Enum Can Refer To Other Enum
+        - Enum Can Refer To Same Enum
+        - Enum Can Have Calculations
+        - Enum Can Have Functions
+*/
+// function setHardSeconds() : number {
+//     return 3;
+// }
+// enum Kids {
+//     five = 25,
+//     seven = 20,
+//     ten = 15
+// }
+// enum Level {
+//     kid = Kids.ten,
+//     easy = 9,
+//     medium = easy - 3,
+//     hard = etHardSeconds()
+// }
+// let lvl: string = "Esay";
+// if(lvl === "Esay") {
+//     console.log(`The Level is ${lvl} and Number of Seconds is ${Level.hard}`);
+// }
+// ************************************************************
+/*
+    Data Types
+    - Type Assertions
+        - Sometime Compiler Doesent Know the Information we Do.
+        - TypeScript is Not Performing any Check to Make Sure Type Assertion is Valid.
+*/
+// // let myImg = document.getElementById("my-img") as HTMLImageElement;
+// // let myImg = <HTMLImageElement> document.getElementById("my-img");
+// // console.log(myImg.src);
+// let data: any = "1000";
+// console.log((data as string).repeat(3));
+// ************************************************************
+/*
+    Data Types
+    - Union and Instersection Types
+        - Union Type
+            - The |  Symbol is Used To Create The Union => "Or"
+
+        Intersection Type
+            - Is a Type That Combines Several Types Into One
+            - The & Symbol is Used to Create an Intersection => "And"
+
+        If a Union is an OR, Then an Intersection Is An AND
+*/
+// // let all: number | string = "100";
+// type A = {
+//     one: String,
+//     two: number,
+//     three: boolean
+// }
+// type B = A & {
+//     four: number
+// }
+// type C = {
+//     five: boolean
+// }
+// type mix = A & C ;
+// function getActions(btn: mix) {
+//     console.log(`Hallo ${btn.one}`);
+//     console.log(`Hallo ${btn.two}`);
+//     console.log(`Hallo ${btn.three}`);
+//     console.log(`Hallo ${btn.five}`);
+// }
+// getActions({one:"Strinf", two: 100, three: true, five:true});
 //# sourceMappingURL=main.js.map
