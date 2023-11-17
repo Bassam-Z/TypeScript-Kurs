@@ -414,3 +414,38 @@ Type Annotations || Signature
 // }
 
 // getActions({one:"Strinf", two: 100, three: true, five:true});
+
+// ************************************************************
+
+/*
+    Type Annotation With Object
+*/
+
+// let mayObjeckt: {
+//     // readonly username: string,
+//     username: string,
+//     id: number,
+//     hire?:boolean,
+//     skills: {
+//         one: string,
+//         two: string
+//     }
+// } = {
+//     username: "Bassam",
+//     id: 100,
+//     // hire: true,
+//     skills: {
+//         one:"HTML",
+//         two:"HTML"
+//     }
+// };
+
+
+// mayObjeckt.username = "Ali";
+// mayObjeckt.id = 101;
+// mayObjeckt.hire = false;
+
+// console.log(mayObjeckt.username);
+// console.log(mayObjeckt.id);
+// console.log(mayObjeckt.hire);
+// console.log(mayObjeckt.skills.one);
