@@ -449,3 +449,152 @@ Type Annotations || Signature
 // console.log(mayObjeckt.id);
 // console.log(mayObjeckt.hire);
 // console.log(mayObjeckt.skills.one);
+
+// ************************************************************
+
+/*
+    Interface
+        - Interface Declaration
+            - Server Like Types
+            - the Interface Describes The Shape of An Object
+            - It Defines The Syntax to Follow
+
+            - Use With Object
+            - Use With Function
+            - Use Read Only and Optional Operator
+*/
+
+// interface User {
+//     id: number,
+//     username: string,
+//     country: string,
+//     sayHello(): string,
+//     sayWelcome(): string,
+//     getDouble(num: number): number
+// }
+
+// let user: User = {
+//     id:100,
+//     username: "Ali",
+//     country: "Syria",
+//     sayHello() {
+//         return `Hello ${this.username}`
+//     },
+//     sayWelcome: () => {
+//         return `You are Welcome ${user.username}`
+//     },
+//     getDouble(nu) {
+//         return nu * 2;
+//     },
+// }
+
+// // console.log(user);
+
+// // function getData (data:User) {
+// //     console.log(`ID is: ${data.id}`);
+// //     console.log(`User Name is: ${data.username}`);
+// //     console.log(`Country is: ${data.country}`);
+// // }
+
+// // getData({id:150, username:"Bassam", country:"Deutschland"})
+
+// console.log(user.id);
+// console.log(user.sayHello());
+// console.log(user.sayWelcome());
+// console.log(user.getDouble(100));
+
+// ************************************************************
+
+/*
+    Interface
+        - ReOpen The Interface and use Cases
+*/
+
+// //Homepage
+// interface Settings {
+//     readonly theme: boolean;
+//     font: string;
+// }
+
+// // Articles Page
+// interface Settings {
+//     sidebar: boolean;
+// }
+
+// // Contact Page
+// interface Settings {
+//     external: boolean;
+// }
+
+// let userSettings: Settings = {
+//     theme: true,
+//     font: "open Sans",
+//     sidebar: false,
+//     external: true
+// }
+
+
+// ************************************************************
+
+/*
+    Interface
+        - Extending interfaces
+*/
+
+// interface User {
+//     id: number;
+//     username: string;
+//     country: string;
+// }
+
+// interface Moderator extends User {
+//     // id: number;
+//     // username: string;
+//     // country: string;
+//     role: string | number
+// }
+
+// interface Admin extends User, Moderator {
+//     protect: boolean;
+// }
+
+// let user: Admin= {
+//     id: 100,
+//     username: "Basam",
+//     country: "Deutschlan",
+//     role: "Admin",
+//     protect: true
+// }
+
+// console.log(user);
+
+// ************************************************************
+
+/*
+    Interface
+        - Interface VS Type Aliases
+        - Take a Look on HTMLElement Interface
+*/
+
+//Homepage
+interface Settings {
+    readonly theme: boolean;
+    font: string;
+}
+
+// Articles Page
+interface Settings {
+    sidebar: boolean;
+}
+
+// Contact Page
+interface Settings {
+    external: boolean;
+}
+
+let userSettings: Settings = {
+    theme: true,
+    font: "open Sans",
+    sidebar: false,
+    external: true
+}
