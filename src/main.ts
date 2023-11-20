@@ -576,25 +576,34 @@ Type Annotations || Signature
         - Take a Look on HTMLElement Interface
 */
 
-//Homepage
-interface Settings {
-    readonly theme: boolean;
-    font: string;
-}
+// //Homepage
+// type Settings {
+//     readonly theme: boolean;
+//     font: string;
+//     sidebar: boolean;
+//     external: boolean;
+// }
 
-// Articles Page
-interface Settings {
-    sidebar: boolean;
-}
+// // //Homepage
+// // interface Settings {
+// //     readonly theme: boolean;
+// //     font: string;
+    
+// // }
 
-// Contact Page
-interface Settings {
-    external: boolean;
-}
+// // // Articles Page
+// // interface Settings {
+// //     sidebar: boolean;
+// // }
 
-let userSettings: Settings = {
-    theme: true,
-    font: "open Sans",
-    sidebar: false,
-    external: true
-}
+// // // Contact Page
+// // interface Settings {
+// //     external: boolean;
+// // }
+
+// let userSettings: Settings = {
+//     theme: true,
+//     font: "open Sans",
+//     sidebar: false,
+//     external: true
+// }
