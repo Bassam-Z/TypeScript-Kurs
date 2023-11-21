@@ -479,4 +479,177 @@ Type Annotations || Signature
 //     sidebar: false,
 //     external: true
 // }
+// ************************************************************
+/*
+    Type Annotations with Class
+*/
+// class User {
+//     u: string;
+//     s: number;
+//     msg: () => string;
+//     constructor(username: string, salary: number) {
+//         this.u = username;
+//         this.s = salary;
+//         this.msg = function () {
+//             return `Hello ${this.u} Your Salary Is ${this.s}`;
+//         }
+//     }
+//     sayMsg () {
+//         return `Hello ${this.u} Your Salary is ${this.s}`;
+//     }
+// }
+// let userOne = new User("Ali", 7000)
+// console.log(userOne.u);
+// console.log(userOne.s);
+// console.log(userOne.msg());
+// console.log(userOne.sayMsg());
+// ************************************************************
+/*
+    Class
+    - Data Access Modifiers & Parameters Properties
+        - Public
+            - All members of a Class in TypeScript are Public
+            - All Public Members Can Be Accessed Anywhere Without Any Restractions
+        - Private
+            - Members are visible Only to that Class and are not Accessible outside The Class
+        - Protected
+            - Same Like Private But be Accessed using The Deriving Class
+        
+    - TypeScript is a Layer on Top of JavaScript
+    - It Should Remove All Annotations and Although Access Modifiers "Private for Example"
+*/
+// class User {
+//     // private userN: string;
+//     // u: string;
+//     // protected salary: number;
+//     // s: number;
+//     msg: () => string;
+//     constructor(private username: string, protected salary: number , public readonly adress: string) {
+//         // this.userN = username;
+//         // this.salary = salary;
+//         this.msg = function () {
+//             return `Hello ${this.username} Your Salary Is ${this.salary}`;
+//         }
+//     }
+//     sayMsg () {
+//         return `Hello ${this.username} Your Salary is ${this.salary}`;
+//     }
+// }
+// let userOne = new User("Ali", 7000, "Dortmund")
+// // console.log(userOne.u);
+// // console.log(userOne.salary);
+// console.log(userOne.adress);
+// console.log(userOne.msg());
+// console.log(userOne.sayMsg());
+// ************************************************************
+/*
+    Class and set Accessors
+*/
+// class User {
+//         msg: () => string;
+//         constructor(private _username: string, public salary: number , public readonly adress: string) {
+//             this.msg = function () {
+//                 return `Hello ${this._username} Your Salary Is ${this.salary}`;
+//             }
+//         }
+//         sayMsg () {
+//             return `Hello ${this._username} Your Salary is ${this.salary}`;
+//         }
+//         get username (): string {
+//             return this._username
+//         }
+//         set username (Value: string) {
+//             this._username = Value
+//         }
+//     }
+//     let userOne = new User("Ali", 7000, "Dortmund");
+//     console.log(userOne.username);
+//     userOne.username = "Basam";
+//     console.log(userOne.username);
+//     console.log(userOne.salary);
+//     console.log(userOne.adress);
+//     console.log(userOne.msg());
+//     console.log(userOne.sayMsg());
+// ************************************************************
+/*
+    Class
+        - Static Members
+            - Don't use "name, length, call"
+*/
+// class User {
+//     private static created: number = 0;
+//     // private static _created: number = 0;
+//     // public static get created(): number {
+//     //     return User._created;
+//     // }
+//     // public static set created(value: number) {
+//     //     User._created = value;
+//     // }
+//     // static created: number = 0;
+//     static getCout() : void {
+//         console.log(`${this.created} Objects Created`);
+//     }
+//     constructor(public username: string) {
+//         User.created++;
+//     }
+// }
+// let u1 = new User ("Ali");
+// let u2 = new User ("Basam");
+// let u3 = new User ("Nahar");
+// // console.log(User.created);
+// User.getCout();
+// ************************************************************
+/*
+    Class
+        - Implement Interface
+*/
+// interface Settings {
+//     theme: boolean;
+//     font: string;
+//     save(): void;
+// }
+// class User implements Settings {
+//     constructor(public username: string, public theme: boolean, public font:string) {}
+//     save(): void {
+//         console.log(`Saved`);
+//     }
+//     update(): void {
+//         console.log(`Updated`);
+//     }
+// }
+// let UserOne = new User("Ali", true, "Open Sans");
+// console.log(UserOne.username);
+// console.log(UserOne.font);
+// UserOne.save();
+// UserOne.update();
+// ************************************************************
+/*
+    Class
+        - Abstract Classes and Members
+            - We Cannot Create an Instance of an Abstract Class
+*/
+// abstract class Food {
+//     constructor(public title: string){}
+//     abstract getCookingTime(): void;
+// }
+// class Pizza extends Food {
+//     constructor(title: string, public price: number){
+//         super(title);
+//     }
+//     getCookingTime(): void {
+//         console.log("Cooking Time for Pizza is 15 Min");
+//     }
+// }
+// class Burger extends Food {
+//     constructor(title: string, public price: number){
+//         super(title);
+//     }
+//     getCookingTime(): void {
+//         console.log("Cooking Time for Burger is 10 Min");
+//     }
+// }
+// let pizzaOne = new Pizza("Awesome Pizza", 100);
+// console.log(pizzaOne.title);
+// console.log(pizzaOne.price);
+// pizzaOne.getCookingTime();
 //# sourceMappingURL=main.js.map
