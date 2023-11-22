@@ -817,3 +817,195 @@ Type Annotations || Signature
 // console.log(pizzaOne.title);
 // console.log(pizzaOne.price);
 // pizzaOne.getCookingTime();
+
+// ************************************************************
+
+/*
+    Class
+        - Polymmorphism & Method Override
+
+        - Polymorphism
+            -Classes Have The Same Methpds but Different Implementations
+
+        - Method Override
+            - Allowing Child Class To Provide Implementation of A Method in Parent Class
+            - A Method in child Class Must have Same Name As Parent Class
+
+        noImplicitOverride
+*/
+
+// class Player {
+//     constructor(public name: string) {}
+//     attack() : void {
+//         console.log("Attacking Now");
+//     }
+// }
+// class Amazone extends Player {
+//     constructor(name: string, public spears: number) {
+//         super(name)
+//     }
+//     override attack() : void {
+//         // super.attack();
+//         console.log("Attacking with Spear");
+//         this.spears -= 1;
+//     }
+// }
+// class Barbarian extends Player {
+//     constructor(name: string, public axeDurability: number) {
+//         super(name)
+//     }
+//     override attack() : void {
+//         // super.attack();
+//         console.log("Attacking with Axe");
+//         this.axeDurability -= 1;
+//     }
+// }
+
+// let barOne = new Barbarian("Ali", 100);
+
+
+// console.log(barOne.name);
+// barOne.attack();
+// console.log(barOne.axeDurability);
+
+// ************************************************************
+
+/*
+    Generics
+        - Help Write A Reusable Code
+        - Allow To Pass Type as A Parameter to Another Type
+        - You will be to Deal with Multiple Types Without Using ": Any Type"
+        - We can Create:
+            - Genetic Classes
+            - Genetic Functions
+            - Genetic Methods
+            - Genetic Interfaces
+*/
+
+// // function returnNumber (val: number | string | boolean) : number | string | boolean {
+// //     return val;
+// // }
+// function returnNumber (val: number) : number {
+//     return val;
+// }
+// function returnString (val: string) : string {
+//     return val;
+// }
+// function returnBoolean (val: boolean) : boolean {
+//     return val;
+// }
+
+// console.log(returnNumber(100));
+// console.log(returnString("Ali"));
+// console.log(returnBoolean(true));
+
+// // function returnType<GenericType>( val: GenericType ) : GenericType {
+// //     return val;
+// // }
+// function returnType<T>( val: T ) : T {
+//     return val;
+// }
+
+// console.log(returnType<number>(100));
+// console.log(returnType<string>("Ali"));
+// console.log(returnType<boolean>(true));
+// console.log(returnType<number[]>([1,2,3,4,5]));
+
+// ************************************************************
+
+/*
+    Generics
+        - Arrow Function
+        - Multiple Types
+        - Discussion
+*/
+
+// function returnType<T>( val: T ) : T {
+//     return val;
+// }
+
+// console.log(returnType<number>(100));
+// console.log(returnType<string>("Ali"));
+
+// const returnTypeArroSyntax = <T>( val: T ) : T => val;
+
+// console.log(returnTypeArroSyntax<number>(100));
+// console.log(returnTypeArroSyntax<string>("Ali"));
+
+// function multipleTypes<T, S>( valOne: T, valTwo: S ) : string {
+//     return `The First Value is ${valOne} and Second Value ${valTwo}`;
+// }
+
+// console.log(multipleTypes<string, number>("Ali", 100));
+// console.log(multipleTypes<string, boolean>("Ali", true));
+
+// ************************************************************
+
+/*
+    Generics
+        - Classes
+*/
+
+// class User<T = string> {
+//     constructor(public val: T){}
+//     show(msg: T) : void {
+//         console.log(`${msg} - ${this.val}`);
+//     }
+// }
+
+// let userOne = new User<string>("Ali");
+// console.log(userOne.val);
+// userOne.show("Message");
+
+// let userTwo = new User<number | string>(100);
+// console.log(userTwo.val);
+// userTwo.show("Message");
+
+// ************************************************************
+
+/*
+    Generics
+        - Classes and Interfaces
+*/
+
+// interface Book {
+//     itemType: string;
+//     title: string;
+//     isbn: number;
+//     price?: number;
+// }
+// interface Game {
+//     itemType: string;
+//     title: string;
+//     Style: string;
+//     price: number;
+// }
+
+// class Collection <T>{
+//     public data: T[] = [];
+//     add(item: T) : void {
+//         this.data.push(item);
+//     }
+// }
+
+// let itemOne = new Collection<Book>();
+// itemOne.add({ itemType:"Book", title: "TypeScript lerning", isbn: 300 });
+// itemOne.add({ itemType:"Book", title: "TypeScript + JavaScript lerning", isbn: 500 });
+// console.log(itemOne);
+
+// let itemTwo = new Collection<Game>();
+// itemTwo.add({ itemType:"Game", title: "TypeScript Development", Style: "Dev", price: 400 });
+// console.log(itemTwo);
+
+// ************************************************************
+
+/*
+    JSDocs
+    TsConfig
+    checkJS
+    @Ts-check
+*/
+
+// ************************************************************
+// Done!!!
+// ************************************************************
